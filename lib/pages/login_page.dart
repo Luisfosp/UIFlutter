@@ -10,15 +10,24 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
+    
+    return OrientationBuilder(
+      builder: (BuildContext context, Orientation orientation) {
     return Scaffold(
-      body: Stack(
-        children: const [
+
+      body: SingleChildScrollView(
+        child: Stack(
+          children: const [
           Fondo(),
           Contenido(),
         ],
+        ) 
       ),
     );
+      }
+    );
   }
+
 }
 
 class Fondo extends StatelessWidget {
@@ -62,11 +71,12 @@ class _ContenidoState extends State<Contenido> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: const [
+
           Text(
             'Sign in to TGD and \ncontinue',
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: Colors.white,
+              color: Colors.black,
               fontSize: 30,
               fontWeight: FontWeight.bold,
             ),
@@ -77,7 +87,7 @@ class _ContenidoState extends State<Contenido> {
             'Enter your email and password below to continue to The Growing Developer and let the learning begin! ',
             style: TextStyle(
               
-              color: Colors.white,
+              color: Colors.black,
               fontSize: 10,
               letterSpacing: 1.5,
             ),
@@ -152,9 +162,9 @@ class _DatosState extends State<Datos> {
             ),
           ),
           
-          const SizedBox(height: 5,),
+          const SizedBox(height: 20,),
           const Botones(),
-          const SizedBox(height: 50,),
+          const SizedBox(height: 30,),
           const Text(
             'The Growing Developer',
             textAlign: TextAlign.center,

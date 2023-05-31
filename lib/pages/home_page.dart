@@ -9,6 +9,9 @@ class HomePage extends StatefulWidget {
 class  _HomePageState extends State <HomePage> {
   @override
   Widget build(BuildContext context) {
+    
+    return OrientationBuilder(
+      builder: (BuildContext context, Orientation orientation) {
     return Scaffold(
       body: Stack(
         children: const [
@@ -16,6 +19,8 @@ class  _HomePageState extends State <HomePage> {
           Contenido(),
         ],
       ),
+    );
+    }
     );
   }
 }
@@ -57,16 +62,17 @@ class _ContenidoState extends State<Contenido> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Column(
+      child:  Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: const [
-        Image(
-        image: NetworkImage('https://avatars.githubusercontent.com/u/109951?s=400&v=4'),
-        height: 140,
+        children: [
+          Image.asset(
+            'assets/robot.png',
+             height: 170, 
+             width: 170,
         ),
-        SizedBox(height: 10,),
-          Text(
+        const SizedBox(height: 10,),
+          const Text(
             'Welcome to TDG!',
             textAlign: TextAlign.center,
             style: TextStyle(
@@ -75,8 +81,8 @@ class _ContenidoState extends State<Contenido> {
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: 10,),
-          Text(
+          const SizedBox(height: 10,),
+          const Text(
             textAlign: TextAlign.center,
             'A one-stop portal for you to learn the latest technologies from scratch',
             style: TextStyle(
@@ -86,8 +92,8 @@ class _ContenidoState extends State<Contenido> {
               letterSpacing: 1.5,
             ),
           ),
-          SizedBox(height: 10,),
-          Botones(),
+          const SizedBox(height: 10,),
+          const Botones(),
         ],
       ),
 
@@ -95,12 +101,6 @@ class _ContenidoState extends State<Contenido> {
   }
 }
 
-
-
-
-
-
-// ***
 class Botones extends StatelessWidget {
   const Botones({super.key});
 
