@@ -15,16 +15,18 @@ class _LoginPageState extends State<LoginPage> {
       builder: (BuildContext context, Orientation orientation) {
     return Scaffold(
 
-      body: SingleChildScrollView(
-        child: Stack(
-          children: const [
+      body: Stack(
+        children: const [
+          
           Fondo(),
-          Contenido(),
-        ],
-        ) 
-      ),
-    );
-      }
+          SingleChildScrollView(
+            child: Contenido()
+            )
+          ],
+        ),
+      );
+    }
+      
     );
   }
 
@@ -66,12 +68,12 @@ class _ContenidoState extends State<Contenido> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 60),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: const [
-
+          SizedBox(height: 60,),
           Text(
             'Sign in to TGD and \ncontinue',
             textAlign: TextAlign.center,

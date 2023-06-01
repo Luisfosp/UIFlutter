@@ -12,14 +12,19 @@ class  _HomePageState extends State <HomePage> {
     
     return OrientationBuilder(
       builder: (BuildContext context, Orientation orientation) {
-    return Scaffold(
-      body: Stack(
-        children: const [
-          Fondo(),
-          Contenido(),
-        ],
-      ),
-    );
+      return Scaffold(
+
+        body: Stack(
+          children: const [
+            SizedBox(height: 50,),
+            Fondo(),
+            SingleChildScrollView(
+              
+              child: Contenido()
+              )
+            ],
+          ),
+        );
     }
     );
   }
@@ -61,11 +66,12 @@ class _ContenidoState extends State<Contenido> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 60),
       child:  Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          const SizedBox(height: 100,),
           Image.asset(
             'assets/robot.png',
              height: 170, 
