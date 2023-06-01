@@ -100,6 +100,7 @@ class _ContenidoState extends State<Contenido> {
           ),
           const SizedBox(height: 10,),
           const Botones(),
+          const SizedBox(height: 100,),
         ],
       ),
 
